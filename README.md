@@ -4,6 +4,7 @@
 
 Práctica Nro. 8 – Teoría de Autómatas y Computabilidad Avanzada  
 Universidad Nacional de Loja – FEIRNNR – Carrera de Computación
+
 Por: Luis Armijos, Anthony Gutierrez y Alexis Roman.
 
 ---
