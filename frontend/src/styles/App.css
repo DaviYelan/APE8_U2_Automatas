@@ -1,0 +1,157 @@
+/*
+ * styles/App.css
+ * ==============
+ * Layout principal de la aplicación.
+ */
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--accent-amber);
+}
+
+.app-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.app-header h1 span {
+  color: var(--accent-amber);
+}
+
+.app-header .subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.app-header .university {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* Grammar Display */
+.grammar-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.grammar-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--accent-amber);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grammar-rules {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.grammar-rules .rule {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.grammar-rules .lhs {
+  color: var(--accent-blue);
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.grammar-rules .arrow {
+  color: var(--text-muted);
+}
+
+.grammar-rules .rhs {
+  color: var(--text-primary);
+}
+
+.grammar-rules .terminal {
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.grammar-rules .separator {
+  color: var(--text-muted);
+  margin: 0 0.2rem;
+}
+
+/* Results layout */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.results-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Error banner */
+.error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  color: var(--accent-red);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.error-banner .error-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}

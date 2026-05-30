@@ -1,0 +1,103 @@
+/*
+ * ParseTree.css
+ * =============
+ * Estilos para la visualización SVG del árbol sintáctico.
+ */
+
+.parse-tree-container {
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.parse-tree-svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Nodos */
+.tree-node-group {
+  cursor: default;
+}
+
+.tree-node-rect {
+  rx: 6;
+  ry: 6;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.tree-node-rect.nonterminal {
+  fill: var(--bg-secondary);
+  stroke: var(--accent-blue);
+  stroke-width: 1.5;
+}
+
+.tree-node-rect.terminal {
+  fill: rgba(240, 165, 0, 0.1);
+  stroke: var(--accent-amber);
+  stroke-width: 1.5;
+}
+
+.tree-node-group:hover .tree-node-rect.nonterminal {
+  fill: rgba(59, 130, 246, 0.15);
+}
+
+.tree-node-group:hover .tree-node-rect.terminal {
+  fill: rgba(240, 165, 0, 0.18);
+}
+
+.tree-node-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.tree-node-text.nonterminal {
+  fill: var(--accent-blue);
+}
+
+.tree-node-text.terminal {
+  fill: var(--accent-amber);
+}
+
+/* Líneas de conexión */
+.tree-edge {
+  stroke: var(--border-subtle);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* Controles de zoom */
+.tree-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tree-control-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tree-control-btn:hover {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+}
+
+/* Empty state */
+.tree-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
