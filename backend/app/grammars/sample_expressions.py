@@ -88,3 +88,14 @@ register_expression(SampleExpression(
 #        tags=["AND", "OR"],                                           #
 #    ))                                                                #
 # ──────────────────────────────────────────────────────────────────── #
+
+# Expresión 2
+register_expression(SampleExpression(
+    name="Prueba APE 8",
+    expression="id | ~ ( id & id )",
+    description=(
+        "Evalúa la precedencia correcta de los niveles: OR (Nivel 1), "
+        "AND (Nivel 2) y NOT/Paréntesis (Nivel 3)."
+    ),
+    tags=["OR", "AND", "NOT", "id"]
+))
