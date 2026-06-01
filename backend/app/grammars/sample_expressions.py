@@ -42,6 +42,7 @@ class SampleExpression:
 SAMPLE_EXPRESSIONS: List[SampleExpression] = []
 
 
+
 def register_expression(sample: SampleExpression) -> None:
     """
     Registra una nueva expresión de ejemplo en el sistema.
@@ -74,11 +75,16 @@ register_expression(SampleExpression(
     tags=["NOT", "OR", "AND", "paréntesis"],
 ))
 
-# ──────────────────────────────────────────────────────────────────── #
-#  ESPACIO RESERVADO PARA NUEVAS EXPRESIONES                           #
-#                                                                      #
-#  Simplemente llamen a register_expression() aquí abajo.              #
-#  No es necesario modificar ningún otro archivo.                      #
+register_expression(SampleExpression(
+    name="Precedencia de AND sobre OR",
+    expression="A | B & C",
+    description=(
+        "Demuestra la precedencia de AND sobre OR sin paréntesis. "
+        "Es equivalente a A | B & C."
+    ),
+    tags=["OR", "AND"],   
+))
+
 #                                                                      #
 #  Ejemplo:                                                            #
 #    register_expression(SampleExpression(                             #
